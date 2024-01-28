@@ -16,7 +16,7 @@ services:
         protocol: tcp
         mode: host
     environment:
-      - TZ=Europe/Berlin # Change this for logging and backup, see "Environment-Variables" 
+      - TZ=Europe/Moscow # Change this for logging and backup, see "Environment-Variables" 
       - ALWAYS_UPDATE_ON_START=true
       - MULTITHREAD_ENABLED=true
       - COMMUNITY_SERVER=true
@@ -72,17 +72,16 @@ services:
       - IS_START_LOCATION_SELECT_BY_MAP=true
       - EXIST_PLAYER_AFTER_LOGOUT=false
       - ENABLE_DEFENSE_OTHER_GUILD_PLAYER=false
-      - COOP_PLAYER_MAX_NUM=4
+      - COOP_PLAYER_MAX_NUM=10
       - MAX_PLAYERS=32
-      - SERVER_NAME=jammsen-docker-generated-###RANDOM###
-      - SERVER_DESCRIPTION=Palworld-Dedicated-Server running in Docker by jammsen
+      - SERVER_NAME=GMELUM
+      - SERVER_DESCRIPTION=GMELUM Server
       - ADMIN_PASSWORD=7882253545
       - SERVER_PASSWORD=112233
       - PUBLIC_PORT=8211
       - PUBLIC_IP=213.171.9.38
-      - RCON_ENABLED=false
+      - RCON_ENABLED=true
       - RCON_PORT=25575
-      - REGION=
       - USEAUTH=true
       - BAN_LIST_URL=https://api.palworldgame.com/api/banlist.txt
     volumes:
@@ -90,5 +89,5 @@ services:
   
   rcon:
     image: outdead/rcon:latest
-    entrypoint: ['/rcon', '-a', '10.0.0.5:25575', '-p', '7882253545']
-    profiles: ['rcon'] 
+    entrypoint: ['/rcon', '-a', 'palworld:25575', '-p', '7882253545']
+    profiles: ['rcon']
