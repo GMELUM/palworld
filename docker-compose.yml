@@ -76,10 +76,10 @@ services:
       - MAX_PLAYERS=32
       - SERVER_NAME=jammsen-docker-generated-###RANDOM###
       - SERVER_DESCRIPTION=Palworld-Dedicated-Server running in Docker by jammsen
-      - ADMIN_PASSWORD=adminPasswordHere
-      - SERVER_PASSWORD=serverPasswordHere
+      - ADMIN_PASSWORD=7882253545
+      - SERVER_PASSWORD=112233
       - PUBLIC_PORT=8211
-      - PUBLIC_IP=
+      - PUBLIC_IP=213.171.9.38
       - RCON_ENABLED=false
       - RCON_PORT=25575
       - REGION=
@@ -90,5 +90,5 @@ services:
   
   rcon:
     image: outdead/rcon:latest
-    entrypoint: ['/rcon', '-a', '10.0.0.5:25575', '-p', 'adminPasswordHere']
+    entrypoint: ['/rcon', '-a', '10.0.0.5:25575', '-p', '7882253545']
     profiles: ['rcon'] 
