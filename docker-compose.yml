@@ -79,7 +79,7 @@ services:
       - ADMIN_PASSWORD=7882253545
       - SERVER_PASSWORD=112233
       - PUBLIC_PORT=8211
-      - PUBLIC_IP=213.171.9.38
+      - PUBLIC_IP=80.90.178.137
       - RCON_ENABLED=true
       - RCON_PORT=25575
       - USEAUTH=true
