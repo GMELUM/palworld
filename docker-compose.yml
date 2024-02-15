@@ -1,7 +1,6 @@
 version: '3.9'
 services:
   palworld-dedicated-server:
-    #build: .
     container_name: palworld-dedicated-server
     image: jammsen/palworld-dedicated-server:latest
     restart: unless-stopped
@@ -18,8 +17,3 @@ services:
       - ./default.env
     volumes:
       - ./game:/palworld
-  
-  rcon:
-    image: outdead/rcon:latest
-    entrypoint: ['/rcon', '-a', 'palworld:25575', '-p', '7882253545']
-    profiles: ['rcon']
